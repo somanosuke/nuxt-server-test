@@ -1,5 +1,5 @@
 export default defineEventHandler(async (event) => {
-  const db = hubDatabase();
+  const db = event.context.cloudflare.env.DB;
   const id = getRouterParam(event, "id");
   const body = await readBody(event);
 
